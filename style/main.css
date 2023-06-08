@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Bree Serif", serif;
+  background: linear-gradient(-20deg, #00b4db 0%, #8ddad5 100%);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#main_container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  height: 70vh;
+  width: 30vw;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+#main_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#main_content #title {
+  padding-top: 2.5px;
+  font-size: 2rem;
+  background-color: #8ddad5;
+  color: white;
+  border-radius: 10px;
+  width: 35vw;
+  height: 7vh;
+  text-align: center;
+}
+#main_content #subtitle {
+  margin-top: 1.2rem;
+  font-size: 1.4rem;
+  color: #00b4db;
+}
+#main_content #text_area {
+  margin-top: 2.5rem;
+}
+#main_content #text_area input {
+  border: 2px solid black;
+  width: 12rem;
+  height: 2.9rem;
+  border-radius: 5px;
+  outline: none;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  color: #00b4db;
+}
+#main_content #button_sumbit {
+  margin-top: 1rem;
+}
+#main_content #button_sumbit button {
+  border: none;
+  border-radius: 10px;
+  padding: 0rem;
+  width: 9rem;
+  height: 3rem;
+  font-size: 1.2rem;
+  background-color: #2944cf;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  transition: background-color, width 1s linear;
+}
+#main_content #button_sumbit button:hover {
+  background-color: #8ddad5;
+  width: 11.2rem;
+  color: #2944cf;
+}
+#main_content #button_sumbit button:active {
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+#main_content #asstes {
+  margin-top: 1.8rem;
+  width: 25rem;
+  height: 7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 1.5rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+#main_content #feedback {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  color: #2944cf;
+}
+
+@media screen and (max-width: 480px) {
+  #container {
+    height: 78vh;
+    width: 90vw;
+  }
+  #main_content #title {
+    font-size: 1.75rem;
+    padding-top: 0.8rem;
+    width: 85vw;
+    height: 10vh;
+  }
+  
+  #main_content #asstes {
+    width: 25rem;
+  }
+  #main_content #button_sumbit button {
+    transition: background-color, width 1s linear;
+  }
+  #main_content #button_sumbit button:hover {
+    width: 9rem;
+  }
+  #main_content #text_area input {
+    width: 10rem;
+    color: white;
+  }
+}
+@media screen and (max-width: 768px) and (min-width: 481px) {
+  #container {
+    height: 80vh;
+    width: 70vw;
+  }
+  #main_content #title {
+    font-size: 1.75rem;
+    padding-top: 0.8rem;
+    width: 80vw;
+    height: 10vh;
+  }
+  #main_content #asstes {
+    width: 23rem;
+  }
+  #main_content #button_sumbit button {
+    transition: background-color, width 1s linear;
+  }
+  #main_content #button_sumbit button:hover {
+    width: 10rem;
+  }
+}
+@media screen and (min-width: 769px) {
+  #container {
+    height: 80vh;
+    width: 40vw;
+  }
+  #main_content #title {
+    font-size: 1.8rem;
+    padding-top: 1rem;
+    width: 50vw;
+    height: 10vh;
+  }
+  #main_content #asstes {
+    width: 28rem;
+  }
+}/*# sourceMappingURL=main.css.map */

@@ -1,5 +1,6 @@
 // javascript for guess the number 
 
+// function to return random number between a range
 function generateRandom(min, max) {
     let rand = Math.random();
     rand = rand * (max - min);
@@ -7,96 +8,57 @@ function generateRandom(min, max) {
     return Math.floor(rand);
 }
 
-function Converted_numbers(index) {
-    index = Number(index);
-    return index;
+// Acessing the dom of the content 
+let subtitle=document.getElementById('subtitle');
+let guess_number_user=document.getElementById('total_guess');
+let total_num_guess=document.getElementById("no_guess");
+let result=document.getElementById("result_title");
+let input_field=document.getElementById('text_id');
+
+// funtion to return number entered by user 
+function numByUser(){
+    return (input_field.value);
 }
 
+// variable 
+let total_no=0;
+let previous_number;
+let min=Number(1);
+let max=Number(10);
+let total_life_time=Number(5);
+let correct_number=generateRandom(min,max);
+alert(correct_number);
 
-function GuessTheNumber(guess_num,temp_number) {
+// requirement 
+subtitle.innerHTML=`Guess a number between ${min}-${max}`;
 
-    // requirement 
-   
-    // let temp_number = total_time;
-    let correct_number = generateRandom(low_limit, high_limit);
 
-    // necessary variable for string 
-    let Congratulation_string = "Congratulation You Win &#128525;";
-    let loser_string = "LOOSER !!! &#128514;";
-    let greater_correct_string = "Your Guess Is Too High. &#128562;"; // Your Guess Is Too High. 😲
-    let low_correct_string = "Your Guess Is Too Low. &#128552;" // Your Guess Is Too High. 😲
+// main function 
+let guess_button=document.getElementById("btn");
+guess_button.addEventListener('click', () => {
 
-    let correct_answer_string = `Correct Answer: ${correct_number}`;
-    let Life_Time_string = `No. of Life Time: ${temp_number}`;
+    // exception handing
+    if(numByUser() == '' || numByUser()==0 || previous_number== numByUser()){
+        return ;
+    }
+    previous_number=numByUser();
+
+    total_no++;
     
 
-    // acess the element 
-    let Congratulation_acess = document.getElementById("feedback_title"); // loser ,winner , greater , lesser
-    let correct_anser = document.getElementById("total_guess"); // correct answer 
-    let life_time = document.getElementById("no_guess"); // life time 
-    let guess_title = document.getElementById("subtitle"); // subtitle guess 1 to 15 wala
+    // output
+    guess_number_user.innerHTML=`Guess number is : ${numByUser()}`;
+    total_num_guess.innerHTML=`No. of Guess: ${total_no}`;
 
-   
-    temp_number = Converted_numbers(temp_number);
-
-   
-
-
-    life_time.innerHTML = Life_Time_string;
-    temp_number--;
-
-    guess_num = Converted_numbers(guess_num);
-
-    if (guess_num == correct_number) {
-        Congratulation_acess.innerHTML = Congratulation_string;
-        life_time.innerHTML = Life_Time_string;
-        return 0;
+    if (correct_number == previous_number){
+        result.innerHTML="CONGRATURLATION &#127942; &#128519; &#128525; "
+        total_num_guess.innerHTML=`Correct Number is : ${correct_number}`;
+    }
+    else if(correct_number < previous_number ){
+        result.innerHTML="GUESS NUMBER IS GREATER &#128514;  &#129323; "
+    }
+    else if(correct_number > previous_number ){
+        result.innerHTML="GUESS NUMBER IS LESS : &#128517; &#129325; &#129317; "
     }
 
-    else {
-
-        if (guess_num > correct_number) {
-            Congratulation_acess.innerHTML = low_correct_string;
-        }
-
-        else if (guess_num < correct_number) {
-            Congratulation_acess.innerHTML = greater_correct_string;
-        }
-
-    }
-
-    // if (temp_number == 0) {
-
-    //     Congratulation_acess.innerHTML = loser_string;
-    //     correct_anser.innerHTML = correct_answer_string;
-    // }
-
-}
-
-function fun1(){
-    alert(text_area1.value)
-    return(text_area1.value);
-}
-
-// main Function 
-let text_area1 = document.getElementById('text_id');
-let btn1 = document.getElementById('btn');
-
-// Title string range 
-let low_limit = 1;
-let high_limit = 20;
-let guess_title_string = `Guess a number between ${low_limit} - ${high_limit}`;
-guess_title.innerHTML = guess_title_string;
-
-
-btn1.addEventListener('click', () => {
-    let temp = fun1();
-    GuessTheNumber(temp, 5)
 });
-
-
-
-
-
-
-

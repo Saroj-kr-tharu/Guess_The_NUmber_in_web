@@ -21,8 +21,9 @@ body {
 }
 
 #container {
-  height: 70vh;
+  height: 100vh;
   width: 30vw;
+  border-color: black;
   border-radius: 10px;
   background-color: #fff;
 }
@@ -61,10 +62,10 @@ body {
   font-size: 1.5rem;
   color: #00b4db;
 }
-#main_content #button_sumbit {
+#main_content #button_sumbit, #main_content #button_result {
   margin-top: 1rem;
 }
-#main_content #button_sumbit button {
+#main_content #button_sumbit button, #main_content #button_result button {
   border: none;
   border-radius: 10px;
   padding: 0rem;
@@ -76,16 +77,16 @@ body {
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   transition: background-color, width 1s linear;
 }
-#main_content #button_sumbit button:hover {
+#main_content #button_sumbit button:hover, #main_content #button_result button:hover {
   background-color: #8ddad5;
   width: 11.2rem;
   color: #2944cf;
 }
-#main_content #button_sumbit button:active {
+#main_content #button_sumbit button:active, #main_content #button_result button:active {
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 #main_content #result_expression {
-  margin-top: 1.8rem;
+  margin-top: 1rem;
   width: 25rem;
   height: 7rem;
   display: flex;
@@ -104,7 +105,7 @@ body {
 
 @media screen and (max-width: 480px) {
   #container {
-    height: 58vh;
+    height: 80vh;
     width: 90vw;
     margin-top: -8rem;
   }
@@ -119,6 +120,8 @@ body {
   }
   #main_content #button_sumbit button {
     transition: background-color, width 1s linear;
+    display: block;
+    margin: 0rem 0rem 1rem 0rem;
   }
   #main_content #button_sumbit button:hover {
     width: 9rem;
@@ -135,7 +138,7 @@ body {
 }
 @media screen and (max-width: 768px) and (min-width: 481px) {
   #container {
-    max-height: 55vh;
+    max-height: 80vh;
     width: 70vw;
     margin-top: -14rem;
   }
@@ -150,6 +153,8 @@ body {
   }
   #main_content #button_sumbit button {
     transition: background-color, width 1s linear;
+    display: block;
+    margin: 0rem 0rem 1rem 0rem;
   }
   #main_content #button_sumbit button:hover {
     width: 10rem;

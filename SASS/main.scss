@@ -29,8 +29,9 @@ body {
 }
 
 #container {
-    height: 70vh;
+    height: 100vh;
     width: 30vw;
+    border-color: black;
     border-radius: 10px;
     background-color: $background_color;
 }
@@ -62,7 +63,10 @@ body {
 
     #text_area {
         margin-top: 2.5rem;
+    
         input {
+            
+            //  display: none;
             border: 2px solid black;
             width: 12rem;
             height: 2.9rem;
@@ -74,7 +78,7 @@ body {
         }
     }
 
-    #button_sumbit {
+    #button_sumbit,#button_result {
         margin-top: 1rem;
         button {
             border: none;
@@ -100,7 +104,7 @@ body {
     }
 
     #result_expression {
-        margin-top: 1.8rem;
+        margin-top: 1rem;
         width: 25rem;
         height: 7rem;
 
@@ -124,7 +128,7 @@ body {
 // for mobile
 @media screen and (max-width: 480px) {
     #container {
-        height: 58vh;
+        height: 80vh;
         width: 90vw;
         margin-top:-8rem;
     }
@@ -139,14 +143,18 @@ body {
 
         #result_expression {
             width: 25rem;
+
         }
 
         #button_sumbit {
             
             button { 
                 transition: background-color, width 1s linear;
+                display: block;
+                margin:0rem 0rem 1rem 0rem;
                 &:hover {
                     width: 9rem;
+                   
                     
                 }
             }
@@ -154,6 +162,7 @@ body {
 
         #text_area {
             input {
+               
                 width: 10rem;
                 color: $primary_color;
                 
@@ -171,7 +180,7 @@ body {
 // tablet
 @media screen and (max-width: 768px) and (min-width: 481px) {
     #container {
-        max-height: 55vh;
+        max-height: 80vh;
         width: 70vw;
         margin-top:-14rem;
     }
@@ -191,7 +200,10 @@ body {
         #button_sumbit {
             
             button { 
+                // transition: background-color, width 1s linear;
                 transition: background-color, width 1s linear;
+                display: block;
+                margin:0rem 0rem 1rem 0rem;
                 &:hover {
                     width: 10rem;
                     

@@ -8,6 +8,7 @@ function generateRandom(min, max) {
     return Math.floor(rand);
 }
 
+
 // Acessing the dom of the content 
 let subtitle = document.getElementById('subtitle');
 let guess_number_user = document.getElementById('total_guess');
@@ -29,43 +30,68 @@ let total_life_time = Number(5);
 let correct_number = generateRandom(min, max);
 // alert(correct_number);
 
-// requirement 
-subtitle.innerHTML = `Guess a number between ${min}-${max}`;
 
-
-// main function 
-let guess_button = document.getElementById("btn");
-guess_button.addEventListener('click', () => {
-
-    // exception handing
-    if (numByUser() == '' || numByUser() == 0 || previous_number == numByUser()) {
-        return;
-    }
-    previous_number = numByUser();
-
-    total_no++;
-
-
-    // output
-    guess_number_user.innerHTML = `Guess number is : ${numByUser()}`;
-    total_num_guess.innerHTML = `No. of Guess: ${total_no}`;
-
-    if (correct_number == previous_number) {
-        result.innerHTML = "CONGRATURLATION &#127942; &#128519; &#128525; "
-        total_num_guess.innerHTML = `Correct Number is : ${correct_number}`;
-    }
-    else if (correct_number < previous_number) {
-        result.innerHTML = "GUESS NUMBER IS GREATER &#128514;  &#129323; "
-    }
-    else if (correct_number > previous_number) {
-        result.innerHTML = "GUESS NUMBER IS LESS : &#128517; &#129325; &#129317; "
-    }
-
-});
-
-
+// btn 
 let see_result_btn = document.getElementById("btn_result");
-see_result_btn.addEventListener('click', () => {
-    alert(correct_number);
-});
+let guess_button = document.getElementById("btn");
 
+function main() {
+    // requirement 
+    subtitle.innerHTML = `Guess a number between ${min}-${max}`;
+
+
+    // main function 
+    
+    guess_button.addEventListener('click', () => {
+
+        // exception handing
+        if (numByUser() == '' || numByUser() == 0 || previous_number == numByUser()) {
+            return;
+        }
+        previous_number = numByUser();
+
+        total_no++;
+
+
+        // output
+        guess_number_user.innerHTML = `Guess number is : ${numByUser()}`;
+        total_num_guess.innerHTML = `No. of Guess: ${total_no}`;
+
+        if (correct_number == previous_number) {
+            result.innerHTML = "CONGRATURLATION &#127942; &#128519; &#128525; "
+            total_num_guess.innerHTML = `Correct Number is : ${correct_number}`;
+            AnserRight();
+        }
+        else if (correct_number < previous_number) {
+            result.innerHTML = "GUESS NUMBER IS GREATER &#128514;  &#129323; "
+        }
+        else if (correct_number > previous_number) {
+            result.innerHTML = "GUESS NUMBER IS LESS : &#128517; &#129325; &#129317; "
+        }
+
+    });
+
+
+   
+    see_result_btn.addEventListener('click', () => {
+        alert(correct_number);
+    });
+}
+
+
+
+// function when guess correct 
+// result ---> delete 
+// guess ---> trial 
+function AnserRight() {
+
+    see_result_btn.style.display = "none";
+    guess_button.innerHTML = "RESET";
+    guess_button.addEventListener('click', () => {
+        location.reload();
+    });
+
+
+}
+
+main();

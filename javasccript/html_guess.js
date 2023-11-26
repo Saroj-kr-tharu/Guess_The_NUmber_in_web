@@ -15,6 +15,10 @@ let guess_number_user = document.getElementById('total_guess');
 let total_num_guess = document.getElementById("no_guess");
 let result = document.getElementById("result_title");
 let input_field = document.getElementById('text_id');
+let result_env = document.getElementById('result_env');
+let close_overlay = document.getElementById('close');
+let no_to_dis = document.getElementById('REs');
+let mainContainer = document.getElementById('main_container');
 
 // funtion to return number entered by user 
 function numByUser() {
@@ -72,10 +76,33 @@ function main() {
     });
 
 
+    let isAvail = false;
    
     see_result_btn.addEventListener('click', () => {
-        alert(correct_number);
+        mainContainer.style=" opacity: 0.5;";
+        result_env.style="display:flex";
+        no_to_dis.innerHTML=correct_number;
+         isAvail = true;
+        document.addEventListener("click", function(event){
+            if(event.target.contains(result_env) && isAvail == true){
+                mainContainer.style=" opacity: 1;";
+                result_env.style="display:none";
+                // return;
+            } 
+            
+        })
+
+        close_overlay.addEventListener('click', () => {
+            mainContainer.style=" opacity: 1;";
+            result_env.style="display:none";
+            
+        })
+
+       
+
     });
+
+    
 }
 
 

@@ -7,7 +7,6 @@
 
 body {
   font-family: "Bree Serif", serif;
-  background: linear-gradient(-20deg, #00b4db 0%, #8ddad5 100%);
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -18,6 +17,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(-20deg, #00b4db 0%, #8ddad5 100%);
+  position: fixed;
 }
 
 #container {
@@ -26,6 +27,58 @@ body {
   border-color: black;
   border-radius: 10px;
   background-color: #fff;
+}
+
+#result_env {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  z-index: 200;
+  transition: all 200ms;
+}
+#result_env #content {
+  background-color: #2abfd9;
+  color: white;
+  width: 30rem;
+  height: 30vh;
+  border-radius: 2rem;
+  opacity: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 200ms;
+}
+#result_env #content #Gen {
+  position: relative;
+  top: -1rem;
+  left: 1.5rem;
+  font-size: 2.5rem;
+}
+#result_env #content #REs {
+  position: relative;
+  top: 2rem;
+  left: -10rem;
+  font-size: 3rem;
+}
+#result_env #content #Gen:hover,
+#result_env #content #REs:hover {
+  color: gray;
+}
+#result_env .close {
+  position: relative;
+  top: -4.5rem;
+  right: -23rem;
+  transition: all 200ms;
+  font-size: 4rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+#result_env .close:hover {
+  color: white;
 }
 
 #main_content {
@@ -62,10 +115,12 @@ body {
   font-size: 1.5rem;
   color: #00b4db;
 }
-#main_content #button_sumbit, #main_content #button_result {
+#main_content #button_sumbit,
+#main_content #button_result {
   margin-top: 1rem;
 }
-#main_content #button_sumbit button, #main_content #button_result button {
+#main_content #button_sumbit button,
+#main_content #button_result button {
   border: none;
   border-radius: 10px;
   padding: 0rem;
@@ -77,12 +132,14 @@ body {
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   transition: background-color, width 1s linear;
 }
-#main_content #button_sumbit button:hover, #main_content #button_result button:hover {
+#main_content #button_sumbit button:hover,
+#main_content #button_result button:hover {
   background-color: #8ddad5;
   width: 11.2rem;
   color: #2944cf;
 }
-#main_content #button_sumbit button:active, #main_content #button_result button:active {
+#main_content #button_sumbit button:active,
+#main_content #button_result button:active {
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 #main_content #result_expression {
@@ -108,6 +165,33 @@ body {
     height: 80vh;
     width: 90vw;
     margin-top: -8rem;
+  }
+  #result_env #content {
+    width: 20rem;
+    height: 20vh;
+  }
+  #result_env #content #Gen {
+    top: -0.5rem;
+    left: 0rem;
+    font-size: 1.9rem;
+  }
+  #result_env #content #REs {
+    top: 2.1rem;
+    left: -9.5rem;
+    font-size: 3rem;
+  }
+  #result_env .close {
+    position: relative;
+    top: -3.8rem;
+    left: 16rem;
+    transition: all 200ms;
+    font-size: 4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  #result_env .close:hover {
+    color: white;
   }
   #main_content #title {
     font-size: 1.75rem;

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Number</title>
+    <link rel="stylesheet" href="./style/main.css">
+
+</head> 
+
+<body>
+
+    
+    <div id="main_container">
+        
+        <div id="container">
+            
+            <div id="result_env">
+                <div id="content">
+                    <a class="close" id="close" href="#">&times;</a>
+                    <h2 id="Gen">Generated Number </h2>
+                   
+                </div>
+            </div>
+
+            <div id="main_content">
+
+                <!-- When Result is click  -->
+                
+
+                <div id="title">Number Guesing Game</div>
+                <div id="subtitle">Guess a number between 1-15</div>
+                <div id="text_area">
+                    <input type="number" id="text_id">
+                </div>
+                <div id="button_sumbit">
+                    <button id="btn"> GUESS </button>
+                    <button id="btn_result"> RESET</button>
+                </div>
+
+                <!-- asstes = result_expression -->
+                <div id="result_expression"> 
+                    <span id="total_guess">Guess numbers is :0 </span>
+                    <span id="no_guess">No. of Guess: 0</span>
+                </div>
+
+                <!-- feedback = result -->
+                <div id="result" class="result">
+                    <span id="result_title">
+                        Best Of Luck. &#128522;
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    
+
+    <script src="./javasccript/html_guess.js">
+        
+    </script>
+   
+</body>
+
+</html>

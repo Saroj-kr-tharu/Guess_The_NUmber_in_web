@@ -4,7 +4,7 @@ Welcome to Guess The Number Webpage.
 - ### Goal User Have to Guess the random no in range 
 
 ## 🖼️ See live at 
-- https://saroj-kr-tharu.github.io/Guess_The_NUmber_in_web/
+- https://saroj-kr-tharu.github.io/Guess_The_NUmber_in_web/#
 ## 🌐 Technologies Used
 -  Css
 -  Html
